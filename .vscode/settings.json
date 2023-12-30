@@ -1,0 +1,31 @@
+{
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+  },
+  "python.formatting.provider": "black",
+  "black-formatter.args": ["--line-length", "140"],
+  "python.analysis.typeCheckingMode": "off",
+
+  "files.associations": {
+    "**/*.html": "html",
+    "**/templates/*/*.html": "django-html",
+    "**/templates/*": "django-html",
+    "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+  },
+
+  "emmet.includeLanguages": {
+    "django-html": "html"
+  },
+
+  "beautify.language": {
+    "html": ["htm", "html", "django-html"]
+  },
+
+  "[django-html]": {
+    "editor.defaultFormatter": "HookyQR.beautify",
+    "editor.formatOnSave": false
+  },
+  "git.ignoreLimitWarning": true,
+  "editor.rulers": [200]
+}

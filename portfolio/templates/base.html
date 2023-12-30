@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
+
+  <style>
+    .main-content {
+      margin-top: 60px;
+    }
+  </style>
   <body>
 
   <div class="container">
@@ -35,6 +41,9 @@
               <a class="nav-link" href="{% url 'blog:index' %}">Blog</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="{% url 'projects:experiments' %}">Experiments</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="{% url 'about' %}">About</a>
             </li>
           </ul>
@@ -52,7 +61,7 @@
     </nav>
   </div>
     
-    <div class="container">
+    <div class="main-content">
       {% block content %}
         
       {% endblock %}

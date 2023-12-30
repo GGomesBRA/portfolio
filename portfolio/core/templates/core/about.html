@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'core/profileCardStyle.css' %}">
+
+<div id="profileCard">
+  <profile-card
+    :name="'{{ superuser.get_full_name|escapejs }}'"
+    :role="'{{ profile.role|escapejs }}'"
+    :description="'{{ profile.description|escapejs }}'"
+    :profile-picture="'{{ profile.profile_picture.url|escapejs }}'">
+  </profile-card>
+</div>
+
+<!-- Vue CDN -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+<!-- Vue component script -->
+<script src="{% static 'vue/components/profileCard.js' %}"></script>
+{% endblock %}
