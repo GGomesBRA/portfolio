@@ -1,25 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>THIS IS THE INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE INDEX OF PORTFOLIO</h1>
+<div class="px-4 py-5 my-5 text-center">
+  <h1 class="display-5 fw-bold">A Portfolio WebApp to show your skills</h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">Configure our Profile, feed a professional Blog, showcase each Project you contributed too. Have some experiments? Showcase them too. Let contractors know you are the right hire.</p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <a href="{% url 'projects:index' %}" class="btn btn-primary btn-lg px-4 gap-3">Projects</a>
+      <a href="{% url 'about' %}" class="btn btn-outline-secondary btn-lg px-4">About</a>
+    </div>
+  </div>
+</div>
 {% endblock content %}

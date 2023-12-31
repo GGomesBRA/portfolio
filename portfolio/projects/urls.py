@@ -8,5 +8,7 @@ app_name = "projects"
 
 urlpatterns = [
     path("", views.index, name="index"),
+    path("detail/<int:project_id>/", views.project_detail, name="project_detail"),
     path("experiments/", views.experiments, name="experiments"),
+    path("epexriments/detail/<int:experiment_id>/", views.experiment_detail, name="experiment_detail"),
 ]

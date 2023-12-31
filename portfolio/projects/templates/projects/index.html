@@ -1,25 +1,40 @@
 {% extends "base.html" %}
+{% load static %}
+
 
 {% block content %}
-  <h1>THIS IS THE PROJECTS INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE PROJECTS INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE PROJECTS INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE PROJECTS INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE PROJECTS INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE PROJECTS INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE PROJECTS INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE PROJECTS INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE PROJECTS INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE PROJECTS INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE PROJECTS INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE PROJECTS INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE PROJECTS INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE PROJECTS INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE PROJECTS INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE PROJECTS INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE PROJECTS INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE PROJECTS INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE PROJECTS INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE PROJECTS INDEX OF PORTFOLIO</h1>
-  <h1>THIS IS THE PROJECTS INDEX OF PORTFOLIO</h1>
-{% endblock content %}
+<div class="container text-center" id="app">
+  <h1>Welcome to the PROJECTS app of PORTFOLIO project</h1>
+  <h3 class="text-secondary">The PROJECTS app is being built, so there is nothing to see here yet.</h3>
+  <h3>PROJECTS:</h3>
+  {% for project in projects %}
+    <p>{{project}}</p>
+    <p>{{project.image.url}}</p>
+  {% endfor %}
+  
+
+  <div v-for="project in projects" :key="project.id">
+    <project-card :project="project"></project-card>
+  </div>
+</div>
+
+
+<!-- Vue CDN -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+<script src="{% static 'projects/vue/components/projectCard.js' %}"></script>
+<script>
+  console.log('MOUNTED')
+  const app = Vue.createApp({
+    components: {
+      "project-card": window.ProjectCard,
+    },
+    data() {
+      console.log(JSON.parse('{{ projects_json|escapejs }}'))
+      return {
+        projects: JSON.parse('{{ projects_json|escapejs }}')
+      };
+    }
+  }).mount("#app");
+</script>
+
+{% endblock %}
