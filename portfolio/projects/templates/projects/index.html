@@ -5,14 +5,65 @@
 {% block content %}
 
 <link rel="stylesheet" href="{% static 'projects/projectCardStyle.css' %}">
-
-<div id="app">
-  <div class="card-row">
-    <div v-for="project in projects" :key="project.id">
-      <project-card :project="project"></project-card>
+{% if projects %}
+  <div id="app">
+    <div class="card-row">
+      <div v-for="project in projects" :key="project.id">
+        <project-card :project="project"></project-card>
+      </div>
     </div>
   </div>
-</div>
+{% else %}
+  <div class="card-row">
+    <div class="project-card">
+      <img class="cover-image" src="/media/projects/images/placeholder.jpeg" />
+      <div class="card-details">
+        <div class="title-row">
+          <div class="text-wrapper">LOREM IPSUM</div>
+          <div class="element">$ 1,000,000</div>
+        </div>
+        <p class="div">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the l...
+        </p>
+        <div class="date-row">
+          <div class="text-wrapper-2">2024-01-01 to 2024-06-01</div>
+        </div>
+      </div>
+    </div>
+    <div class="project-card">
+      <img class="cover-image" src="/media/projects/images/placeholder2.jpeg" />
+      <div class="card-details">
+        <div class="title-row">
+          <div class="text-wrapper">LOREM IPSUM</div>
+          <div class="element">$ 1,000,000</div>
+        </div>
+        <p class="div">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the l...
+        </p>
+        <div class="date-row">
+          <div class="text-wrapper-2">2024-01-01 to 2024-06-01</div>
+        </div>
+      </div>
+    </div>
+    <div class="project-card">
+      <img class="cover-image" src="/media/projects/images/placeholder3.jpeg" />
+      <div class="card-details">
+        <div class="title-row">
+          <div class="text-wrapper">LOREM IPSUM</div>
+          <div class="element">$ 1,000,000</div>
+        </div>
+        <p class="div">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the l...
+        </p>
+        <div class="date-row">
+          <div class="text-wrapper-2">2024-01-01 to 2024-06-01</div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+
 
 
 <!-- Vue CDN -->
