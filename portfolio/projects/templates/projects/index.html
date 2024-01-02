@@ -3,18 +3,14 @@
 
 
 {% block content %}
-<div class="container text-center" id="app">
-  <h1>Welcome to the PROJECTS app of PORTFOLIO project</h1>
-  <h3 class="text-secondary">The PROJECTS app is being built, so there is nothing to see here yet.</h3>
-  <h3>PROJECTS:</h3>
-  {% for project in projects %}
-    <p>{{project}}</p>
-    <p>{{project.image.url}}</p>
-  {% endfor %}
-  
 
-  <div v-for="project in projects" :key="project.id">
-    <project-card :project="project"></project-card>
+<link rel="stylesheet" href="{% static 'projects/projectCardStyle.css' %}">
+
+<div id="app">
+  <div class="card-row">
+    <div v-for="project in projects" :key="project.id">
+      <project-card :project="project"></project-card>
+    </div>
   </div>
 </div>
 

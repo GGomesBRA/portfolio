@@ -1,11 +1,18 @@
 const ProjectCard = Vue.defineComponent({
   template: `
-    <div class="card">
-        <img class="card-img-top" :src="project.image_url" alt="Card image cap" style="width: 100%; height: 200px; object-fit: cover;">
-      <div class="card-body">
-        <h5 class="card-title">{{ project.title }} {{project.image_url}} </h5>
-        <p class="card-text">{{ project.start_date }} - {{ project.end_date || 'Ongoing' }}</p>
-        <p class="card-text">{{ project.description }}...</p>
+    <div class="project-card">
+      <img class="cover-image" :src="project.image_url" />
+      <div class="card-details">
+        <div class="title-row">
+          <div class="text-wrapper">{{ project.title }}</div>
+          <div class="element">$ 1,000,000</div>
+        </div>
+        <p class="div">
+          {{ project.description.slice(0, 125) }}...
+        </p>
+        <div class="date-row">
+          <div class="text-wrapper-2">{{ project.start_date }} to {{ project.end_date || 'Ongoing' }}</div>
+        </div>
       </div>
     </div>
   `,
