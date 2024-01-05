@@ -1,119 +1,101 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
-.project-card {
-  font-family: "Inter", sans-serif;
+
+.xxl {
+  width: auto;
+  height: auto;
+  padding: 0px 150px;
+  background: white;
+  display: flex; /* commands the vieport */
+  flex-direction: column; /* divides its items in the vertical direction */
+  justify-content: flex-start; /* using the start (top in this case */
+  align-items: flex-start;
+  gap: 8px;
 }
 
 .card-row {
-  display: flex;
-  width: 1597px;
-  height: 795px;
-  align-items: flex-start;
-  gap: 40px;
-  padding: 40px;
-  position: relative;
+  align-self: stretch;
+  height: auto;
+  padding: 0 0;
+  display: flex; /* commands the row that presents all cards */
+  flex-wrap: wrap; /* wraps around when there is no space */
+  flex-direction: row; /* divides the row horizontally // organizes items horizontally */
+  justify-content: flex-start; /* organizes from the start of the flex (left-side in this case) */
+  align-items: flex-start; /* sadf */
+  gap: 32px;
 }
 
-.card-row .project-card {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: relative;
-  flex: 1;
+.card {
+  flex: 1 1 0;
+  min-width: 320px; /* This is important, since we want the cards to wrap, if kept auto, they would simply shrink in the same line*/
   align-self: stretch;
-  flex-grow: 1;
-  border-radius: 8px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   overflow: hidden;
-  box-shadow: 0px 4px 4px #00000040;
+  border-radius: 8px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.card-row .cover-image {
-  position: relative;
-  flex: 1;
+.cover-image {
   align-self: stretch;
-  width: 100%;
-  flex-grow: 1;
-  object-fit: cover;
+  flex: 1 1 0;
 }
 
-.card-row .card-details {
+.card-details {
+  align-self: stretch;
+  padding: 16px 24px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
-  padding: 16px 24px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-  background-color: #ffffff;
+  background: white;
 }
 
-.card-row .title-row {
-  display: flex;
-  align-items: flex-start;
+.title-row {
+  align-self: stretch;
+  display: inline-flex;
   justify-content: space-between;
-  padding: 0px 0px 8px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-}
-
-.card-row .text-wrapper {
-  position: relative;
-  flex: 1;
-  margin-top: -1px;
-  font-family: "Inter-SemiBold", Helvetica;
-  font-weight: 600;
-  color: var(--variable-collection-grey-600);
-  font-size: 18px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.card-row .element {
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
-  font-family: "Inter-SemiBold", Helvetica;
-  font-weight: 600;
-  color: var(--variable-collection-grey-600);
-  font-size: 18px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.card-row .div {
-  position: relative;
-  align-self: stretch;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
-  color: var(--variable-collection-grey-400);
-  font-size: 16px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.card-row .date-row {
-  display: flex;
   align-items: flex-start;
-  justify-content: space-around;
-  gap: 8px;
-  padding: 8px 0px 0px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
+  padding-bottom: 8px;
 }
 
-.card-row .text-wrapper-2 {
-  position: relative;
-  flex: 1;
-  margin-top: -1px;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
-  color: var(--variable-collection-grey-400);
+.companion,
+.price,
+.description,
+.date {
+  color: #6e7491;
+  font-size: 18px;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  word-wrap: break-word;
+}
+
+.description {
+  align-self: stretch;
+  color: #7c8db0;
   font-size: 16px;
-  letter-spacing: 0;
-  line-height: normal;
+  font-weight: 400;
+}
+
+.date-row {
+  align-self: stretch;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 8px;
+}
+
+@media (max-width: 991px) {
+  .xxl {
+    width: auto;
+    height: auto;
+    padding: 0px 64px; /* make paddings for smaller devices smaller */
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+  }
 }

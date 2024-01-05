@@ -1,6 +1,6 @@
 .main-content {
   min-height: calc(100vh - 56px - 105px);
-  margin-top: 56px;
+  margin-top: 72px;
   display: flex;
   flex-direction: column;
   justify-content: center;
